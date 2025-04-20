@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0095f9c40e03684a9c81c41f8bce1c7, type: 3}
+  m_Name: ResourcesStaticData
+  m_EditorClassIdentifier: 
+  ResourcesData:
+    data:
+    - Key: 1
+      Value:
+        VisualName: Rocks
+        Icon: {fileID: 21300000, guid: f40913a88240a4c76bf83c250766aa68, type: 3}
+    - Key: 2
+      Value:
+        VisualName: Chemicals
+        Icon: {fileID: 21300000, guid: e04fe15d30dfa47249081e8067a544c5, type: 3}
+    - Key: 3
+      Value:
+        VisualName: Vertex
+        Icon: {fileID: 21300000, guid: 2a507f339f68c465cb98ed7d10af337c, type: 3}
+    - Key: 4
+      Value:
+        VisualName: Space Dust
+        Icon: {fileID: 21300000, guid: 073a9bc94c16e4564bc28c67e34b7faa, type: 3}
+    - Key: 5
+      Value:
+        VisualName: Tools
+        Icon: {fileID: 21300000, guid: 9b974deb64b814abba511b496f9ef1a7, type: 3}

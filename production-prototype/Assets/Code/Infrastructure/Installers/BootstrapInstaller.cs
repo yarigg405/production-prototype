@@ -4,6 +4,7 @@ using Assets.Code.Infrastructure.States.GameStates;
 using Assets.Code.Infrastructure.States.StateMachine;
 using Game.Assets.Code.Gameplay.Level;
 using Game.Assets.Code.Gameplay.Player.Factory;
+using Game.Assets.Code.Gameplay.ProductionResources;
 using Game.Assets.Code.Infrastructure.Loading;
 using Game.Assets.Code.Infrastructure.States.GameStates;
 using Game.Assets.Code.StaticData;
@@ -17,6 +18,7 @@ namespace Game.Assets.Code.Infrastructure.Installers
     internal sealed class BootstrapInstaller : MonoInstaller
     {
         [SerializeField] private StaticDataContainer _staticDataContainer;
+        [SerializeField] private ProductionResourcesStaticData _resourcesData;
 
         private IContainerBuilder _builder;
 
@@ -35,6 +37,7 @@ namespace Game.Assets.Code.Infrastructure.Installers
         private void RegisterStaticData()
         {
             _builder.RegisterInstance(_staticDataContainer);
+            _builder.RegisterInstance(_resourcesData);
         }
 
         private void RegisterInfrastructureServices()

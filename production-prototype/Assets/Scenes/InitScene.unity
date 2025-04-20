@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _staticDataContainer: {fileID: 11400000, guid: 118e64dd5c2c9fc47a575da3a24f7bac, type: 2}
+  _resourcesData: {fileID: 11400000, guid: 0fa545dcb8d5a28429a4e6b5357a4c68, type: 2}
 --- !u!4 &333782810
 Transform:
   m_ObjectHideFlags: 0
