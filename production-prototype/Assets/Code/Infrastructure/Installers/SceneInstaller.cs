@@ -1,4 +1,5 @@
 using Assets.Code.Infrastructure.DI;
+using Game.Assets.Code.Gameplay.Gathering;
 using Game.Assets.Code.Gameplay.Level;
 using Game.Assets.Code.Gameplay.Player.Systems;
 using Game.Assets.Code.Gameplay.Production.Systems;
@@ -39,11 +40,12 @@ namespace Game.Assets.Code.Infrastructure.Installers
             _builder.Register<PlayerNavigationSystem>(Lifetime.Scoped).AsImplementedInterfaces();
             _builder.Register<ResourceProductionSystem>(Lifetime.Scoped).AsImplementedInterfaces();
             _builder.Register<UpdateProductionWidgetsSystem>(Lifetime.Scoped).AsImplementedInterfaces();
+            _builder.Register<GatheringSystem>(Lifetime.Scoped).AsImplementedInterfaces();
         }
 
         private void RegisterSaveLoaders()
         {
-            _builder.Register<BuildingsConditionSaveLoader>(Lifetime.Scoped).As<IGameSaveLoader>();
+            _builder.Register<BuildingsConditionSaveLoader>(Lifetime.Transient).As<IGameSaveLoader>();
 
             _builder.Register<SaveLoadGameService>(Lifetime.Scoped).AsSelf();
         }

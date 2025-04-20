@@ -31,6 +31,11 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
             OnResourcesProducted?.Invoke();
         }
 
+        public void ConsumeProduction(int count)
+        {
+            CurrentResourcesCount.Value -= count;
+        }
+
         public void Setup(float timer, int productionCount)
         {
             CurrentProductionTimer = timer;
