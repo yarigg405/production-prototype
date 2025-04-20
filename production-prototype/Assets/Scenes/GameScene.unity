@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragCamera: {fileID: 1957422468}
   _pinchCamera: {fileID: 223063400}
+  _tap: {fileID: 223063402}
 --- !u!4 &1623996581
 Transform:
   m_ObjectHideFlags: 0
