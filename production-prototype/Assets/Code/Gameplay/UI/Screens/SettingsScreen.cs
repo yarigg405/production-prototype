@@ -6,7 +6,7 @@ using Yrr.Audio;
 using Yrr.UI;
 
 
-namespace Game.Assets.Code.Gameplay.UI.Views
+namespace Game.Assets.Code.Gameplay.UI.Screens
 {
     internal sealed class SettingsScreen : UIScreen
     {

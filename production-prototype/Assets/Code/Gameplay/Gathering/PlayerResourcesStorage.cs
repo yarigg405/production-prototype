@@ -1,6 +1,7 @@
 ﻿using Game.Assets.Code.Gameplay.ProductionResources;
 using System;
 using System.Collections.Generic;
+using Yrr.Audio;
 
 
 namespace Game.Assets.Code.Gameplay.Gathering
@@ -9,7 +10,6 @@ namespace Game.Assets.Code.Gameplay.Gathering
     {
         private Dictionary<ResourceType, int> _resourcesCount = new();
 
-        public event Action<ResourceType> ResourceAddedFirstTime;
         public event Action<ResourceType, int> ResourceCountChanged;
 
         public void AddResource(ResourceType resourceType, int count)
@@ -17,12 +17,13 @@ namespace Game.Assets.Code.Gameplay.Gathering
             if (!_resourcesCount.ContainsKey(resourceType))
             {
                 _resourcesCount[resourceType] = count;
-                ResourceAddedFirstTime?.Invoke(resourceType);
+                ResourceCountChanged?.Invoke(resourceType, _resourcesCount[resourceType]);
             }
             else
             {
                 _resourcesCount[resourceType] += count;
-                ResourceCountChanged?.Invoke(resourceType, count);
+                ResourceCountChanged?.Invoke(resourceType, _resourcesCount[resourceType]);
+                AudioManager.Instance.PlayUiSound("coin");
             }
         }
 

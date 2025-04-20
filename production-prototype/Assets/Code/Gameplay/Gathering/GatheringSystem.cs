@@ -56,7 +56,7 @@ namespace Game.Assets.Code.Gameplay.Gathering
                 if (count <= 0) return;
 
                 model.ConsumeProduction(1);
-                _resourcesStorage.AddResource(_currentgatheringBuilding.Config.ResourceType, count);
+                _resourcesStorage.AddResource(_currentgatheringBuilding.Config.ResourceType, 1);
                 _currentGarherTimer = 0;
             }
         }

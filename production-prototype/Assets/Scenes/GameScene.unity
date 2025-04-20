@@ -1540,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4589741833539511331, guid: b6d81390a7aaea1498efeb32b073cd1b, type: 3}
       propertyPath: <Config>k__BackingField.<ResourcesCountPerTick>k__BackingField
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

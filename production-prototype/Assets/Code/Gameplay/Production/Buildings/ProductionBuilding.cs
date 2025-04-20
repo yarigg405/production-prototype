@@ -1,4 +1,4 @@
-﻿using Game.Assets.Code.Gameplay.Ui;
+﻿using Game.Assets.Code.Gameplay.UI.Elements;
 using UnityEngine;
 
 

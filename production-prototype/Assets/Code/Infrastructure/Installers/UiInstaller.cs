@@ -9,6 +9,7 @@ namespace Game.Assets.Code.Infrastructure.Installers
     internal sealed class UiInstaller : MonoInstaller
     {
         [SerializeField] private UIManager _uiManager;
+      //  [SerializeField] private 
 
         public override void Install(IContainerBuilder builder)
         {

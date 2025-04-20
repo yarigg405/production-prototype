@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-namespace Game.Assets.Code.Gameplay.Ui
+namespace Game.Assets.Code.Gameplay.UI.Elements
 {
     internal sealed class ProductionBuildingWidget : MonoBehaviour
     {
