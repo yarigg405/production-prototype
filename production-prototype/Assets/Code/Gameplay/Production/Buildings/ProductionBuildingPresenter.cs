@@ -20,7 +20,9 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
             _widget = _view.BuildingWidget;
 
             _model.OnResourcesProducted += OnResourceProducedHandler;
-            _widget.UpdateCount(_model.CurrentResourcesCount);
+            _model.CurrentResourcesCount.OnChange += OnResourcesChangedHandler;
+
+            OnResourcesChangedHandler(_model.CurrentResourcesCount);
             _widget.UpdateProductionPercent(_model.CurrentProductionTimer / _config.ProductionTickTime);
         }
 
@@ -32,12 +34,17 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
         private void OnResourceProducedHandler()
         {
             _widget.AnimateResourceProducted();
-            _widget.UpdateCount(_model.CurrentResourcesCount);
+        }
+
+        private void OnResourcesChangedHandler(int count)
+        {
+            _widget.UpdateCount(count);
         }
 
         public void Dispose()
         {
             _model.OnResourcesProducted -= OnResourceProducedHandler;
+            _model.CurrentResourcesCount.OnChange -= OnResourcesChangedHandler;
         }
     }
 }

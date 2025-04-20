@@ -1,4 +1,5 @@
 ﻿using System;
+using Yrr.Utils;
 
 
 namespace Game.Assets.Code.Gameplay.Production.Buildings
@@ -6,9 +7,9 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
     [Serializable]
     internal sealed class ProductionBuildingModel
     {
-        public string UniqId { get; private set; }
-        public float CurrentProductionTimer { get; private set; }
-        public int CurrentResourcesCount { get; private set; }
+        public string UniqId;
+        public float CurrentProductionTimer;
+        public ReactiveValue<int> CurrentResourcesCount = new();
 
         public event Action OnResourcesProducted;
 
@@ -25,7 +26,7 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
         public void IncreaseProduction(int productionCount)
         {
             CurrentProductionTimer = 0;
-            CurrentResourcesCount += productionCount;
+            CurrentResourcesCount.Value += productionCount;
 
             OnResourcesProducted?.Invoke();
         }
@@ -33,7 +34,7 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
         public void Setup(float timer, int productionCount)
         {
             CurrentProductionTimer = timer;
-            CurrentResourcesCount = productionCount;
+            CurrentResourcesCount.Value = productionCount;
         }
     }
 }

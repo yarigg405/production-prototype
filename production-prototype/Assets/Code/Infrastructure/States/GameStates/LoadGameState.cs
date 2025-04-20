@@ -11,7 +11,8 @@ namespace Assets.Code.Infrastructure.States.GameStates
         private readonly IStateMachine _stateMachine;
         private readonly IScenesLoader _sceneLoader;
 
-        public LoadGameState(IStateMachine stateMachine, IScenesLoader sceneLoader)
+        public LoadGameState(IStateMachine stateMachine,
+            IScenesLoader sceneLoader)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;

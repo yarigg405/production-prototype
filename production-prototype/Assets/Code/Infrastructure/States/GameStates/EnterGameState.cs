@@ -28,7 +28,7 @@ namespace Game.Assets.Code.Infrastructure.States.GameStates
         }
 
         public override void Enter()
-        {
+        {           
             PlacePlayer();
 
             _stateMachine.Enter<GameLoopState>();

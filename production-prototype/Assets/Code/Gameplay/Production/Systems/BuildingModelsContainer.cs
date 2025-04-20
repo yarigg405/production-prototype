@@ -1,5 +1,6 @@
 ﻿using Game.Assets.Code.Gameplay.Production.Buildings;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Game.Assets.Code.Gameplay.Production.Systems
@@ -16,6 +17,11 @@ namespace Game.Assets.Code.Gameplay.Production.Systems
             }
 
             return _modelsMap[uniqId];
+        }
+
+        internal ProductionBuildingModel[] GetModels()
+        {
+            return _modelsMap.Values.ToArray();
         }
     }
 }

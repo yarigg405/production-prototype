@@ -5,6 +5,8 @@ using Assets.Code.Infrastructure.States.StateMachine;
 using Game.Assets.Code.Gameplay.Level;
 using Game.Assets.Code.Gameplay.Player.Factory;
 using Game.Assets.Code.Gameplay.ProductionResources;
+using Game.Assets.Code.Gameplay.SaveLoad;
+using Game.Assets.Code.Gameplay.SaveLoad.Infrastructure;
 using Game.Assets.Code.Infrastructure.Loading;
 using Game.Assets.Code.Infrastructure.States.GameStates;
 using Game.Assets.Code.StaticData;
@@ -28,6 +30,7 @@ namespace Game.Assets.Code.Infrastructure.Installers
 
             RegisterStaticData();
             RegisterInfrastructureServices();
+            RegisterSaveLoaders();
             RegisterStates();
             RegisterFactories();
 
@@ -42,10 +45,18 @@ namespace Game.Assets.Code.Infrastructure.Installers
 
         private void RegisterInfrastructureServices()
         {
+            _builder.Register<GameRepository>(Lifetime.Transient).AsImplementedInterfaces();
             _builder.Register<GameStateMachine>(Lifetime.Singleton).AsImplementedInterfaces();
             _builder.Register<ScenesLoader>(Lifetime.Singleton).AsImplementedInterfaces();
             _builder.Register<PlayerProvider>(Lifetime.Singleton).AsSelf();
             _builder.Register<LevelDataProvider>(Lifetime.Singleton).AsSelf();
+        }
+
+        private void RegisterSaveLoaders()
+        {
+
+
+            _builder.Register<SaveLoadMetaService>(Lifetime.Singleton).AsSelf();
         }
 
         private void RegisterStates()
