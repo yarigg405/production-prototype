@@ -32,6 +32,7 @@ namespace Game.Assets.Code.Gameplay.Gathering
 
         void IGatheringSystem.PlayerExitGatheringZone(PlayerEntity player, ProductionBuilding building)
         {
+            _player.ViewModel.IsInInteraction.Value = false;
             _player = null;
             _currentgatheringBuilding = null;
         }
@@ -40,8 +41,13 @@ namespace Game.Assets.Code.Gameplay.Gathering
         {
             if (!_currentgatheringBuilding) return;
             if (!_player) return;
-            if (_player.ViewModel.IsMoving) return;
+            if (_player.ViewModel.IsMoving)
+            {
+                _player.ViewModel.IsInInteraction.Value = false;
+                return;
+            }
 
+            _player.ViewModel.IsInInteraction.Value = true;
             _currentGarherTimer += Time.deltaTime;
             if (_currentGarherTimer > _gatherResourceDelay)
             {

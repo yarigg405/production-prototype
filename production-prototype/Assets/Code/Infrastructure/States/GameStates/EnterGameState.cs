@@ -3,6 +3,7 @@ using Assets.Code.Infrastructure.States.StateMachine;
 using Assets.Code.Infrastructure.States.StatesInfrastructure;
 using Game.Assets.Code.Gameplay.Level;
 using Game.Assets.Code.Gameplay.Player.Factory;
+using Yrr.Audio;
 
 
 namespace Game.Assets.Code.Infrastructure.States.GameStates
@@ -30,7 +31,7 @@ namespace Game.Assets.Code.Infrastructure.States.GameStates
         public override void Enter()
         {           
             PlacePlayer();
-
+            AudioManager.Instance.PlayMusic("music");
             _stateMachine.Enter<GameLoopState>();
         }
 

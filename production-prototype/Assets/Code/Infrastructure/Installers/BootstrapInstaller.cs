@@ -58,6 +58,8 @@ namespace Game.Assets.Code.Infrastructure.Installers
         private void RegisterSaveLoaders()
         {
             _builder.Register<ResourcesStorageSaveLoader>(Lifetime.Transient).As<IMetaSaveLoader>();
+            _builder.Register<GameSettingsContainer>(Lifetime.Singleton).AsSelf();
+            _builder.Register<GameSettingsSaveLoader>(Lifetime.Transient).As<IMetaSaveLoader>();
 
 
             _builder.Register<SaveLoadMetaService>(Lifetime.Singleton).AsSelf();

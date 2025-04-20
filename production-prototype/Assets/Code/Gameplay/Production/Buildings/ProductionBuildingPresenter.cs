@@ -1,5 +1,6 @@
 ﻿using Game.Assets.Code.Gameplay.Ui;
 using System;
+using Yrr.Audio;
 
 
 namespace Game.Assets.Code.Gameplay.Production.Buildings
@@ -33,6 +34,7 @@ namespace Game.Assets.Code.Gameplay.Production.Buildings
 
         private void OnResourceProducedHandler()
         {
+            AudioManager.Instance.PlayUiSound("click");
             _widget.AnimateResourceProducted();
         }
 

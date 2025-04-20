@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e88b820485f66d4f8340ba337f37a16, type: 3}
+  m_Name: MusicCatalog
+  m_EditorClassIdentifier: 
+  sounds:
+    data:
+    - Key: music
+      Value:
+      - Clip: {fileID: 8300000, guid: 2369c7c87f6a93847914e901879568cd, type: 3}
+        ClipVolume: 0.15
+        BasePitch: 1
+        PitchRandom: 0
+      - Clip: {fileID: 8300000, guid: 46dd29ec175719e4e85ff02239a142f0, type: 3}
+        ClipVolume: 0.3
+        BasePitch: 1
+        PitchRandom: 0

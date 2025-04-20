@@ -15,6 +15,8 @@ namespace Game.Assets.Code.Gameplay.SaveLoad.SaveLoaders
 
         protected override void LoadService(PlayerResourcesStorage service, Dictionary<ResourceType, int> data)
         {
+            if (data == null)
+                data = new Dictionary<ResourceType, int>();
             service.Setup(data);
         }
     }
