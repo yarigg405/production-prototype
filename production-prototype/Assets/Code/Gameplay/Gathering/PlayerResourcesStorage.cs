@@ -6,12 +6,17 @@ using Yrr.Audio;
 
 namespace Game.Assets.Code.Gameplay.Gathering
 {
-    internal sealed class PlayerResourcesStorage
+    public class PlayerResourcesStorage
     {
         private Dictionary<ResourceType, int> _resourcesCount = new();
 
         public event Action<ResourceType, int> ResourceCountChanged;
 
+        /// <summary>
+        /// Добавить ресурсы
+        /// </summary>
+        /// <param name="resourceType">Тип ресурса</param>
+        /// <param name="count">Кол-во ресурсов</param>
         public void AddResource(ResourceType resourceType, int count)
         {
             if (!_resourcesCount.ContainsKey(resourceType))

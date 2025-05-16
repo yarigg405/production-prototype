@@ -3,7 +3,7 @@
 namespace Game.Assets.Code.Gameplay.ProductionResources
 {
     [Serializable]
-    internal enum ResourceType
+    public enum ResourceType
     {
         None = 0,
         Rocks = 1,

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Game.Assets.Code.Gameplay.Production.Systems
 {
-    internal sealed class BuildingModelsContainer
+    public class BuildingModelsContainer
     {
         private Dictionary<string, ProductionBuildingModel> _modelsMap = new();
 

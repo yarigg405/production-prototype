@@ -11,5 +11,6 @@ namespace Game.Assets.Code.Gameplay.Production
         [field: SerializeField] public ResourceType ResourceType { get; private set; }
         [field: SerializeField] public float ProductionTickTime { get; private set; }
         [field: SerializeField] public int ResourcesCountPerTick { get; private set; }
+        [field: SerializeField] public int ResourcesCountLimit { get; private set; }
     }
 }

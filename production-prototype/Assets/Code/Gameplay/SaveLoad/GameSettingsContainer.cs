@@ -10,7 +10,7 @@ namespace Game.Assets.Code.Gameplay.SaveLoad
 
         public void UpdateVolumeSettings()
         {
-            AudioManager.Instance.SetSoundsVolume(SoundVolume);
+            //AudioManager.Instance.SetSoundsVolume(SoundVolume);
             AudioManager.Instance.SetMusicVolume(MusicVolume);
         }
     }

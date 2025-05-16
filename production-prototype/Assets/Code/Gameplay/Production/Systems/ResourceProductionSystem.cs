@@ -23,6 +23,7 @@ namespace Game.Assets.Code.Gameplay.Production.Systems
             foreach (var building in _buildingsContainer.Buildings)
             {
                 var model = _modelsContainer.GetModel(building.UniqId);
+                if (building.Config.ResourcesCountLimit <= model.CurrentResourcesCount && building.Config.ResourcesCountLimit != 0) break;
                 model.IncreaseTimer(dt);
 
                 if (model.CurrentProductionTimer >= building.Config.ProductionTickTime)

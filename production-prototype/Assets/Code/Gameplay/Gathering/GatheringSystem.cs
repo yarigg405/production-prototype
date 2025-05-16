@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Cheats;
 using Game.Assets.Code.Gameplay.Player;
 using Game.Assets.Code.Gameplay.Production.Buildings;
-using VContainer.Unity;
 using Game.Assets.Code.Gameplay.Production.Systems;
+using UnityEngine;
+using VContainer.Unity;
 
 
 namespace Game.Assets.Code.Gameplay.Gathering
@@ -21,6 +22,7 @@ namespace Game.Assets.Code.Gameplay.Gathering
         public GatheringSystem(PlayerResourcesStorage resourcesStorage, BuildingModelsContainer buildingModelsContainer)
         {
             _resourcesStorage = resourcesStorage;
+            CheatConsoleController.Init(_resourcesStorage);
             _buildingModelsContainer = buildingModelsContainer;
         }
 
@@ -53,10 +55,11 @@ namespace Game.Assets.Code.Gameplay.Gathering
             {
                 var model = _buildingModelsContainer.GetModel(_currentgatheringBuilding.UniqId);
                 var count = model.CurrentResourcesCount;
-                if (count <= 0) return;
+                if (count <= 0 || (_currentgatheringBuilding.Config.ResourcesCountLimit == count && _currentgatheringBuilding.Config.ResourcesCountLimit != 0)) return;
 
                 model.ConsumeProduction(1);
-                _resourcesStorage.AddResource(_currentgatheringBuilding.Config.ResourceType, 1);
+
+                _resourcesStorage.AddResource(_currentgatheringBuilding.Config.ResourceType, _currentgatheringBuilding.IsUsingMode ? 2 : 1);
                 _currentGarherTimer = 0;
             }
         }
